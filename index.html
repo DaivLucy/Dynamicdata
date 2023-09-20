@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <header>
+        <h1>数据可视化</h1>
+        <div class="timeShow"></div>
+        <script>
+            var t = null
+            let b = 0
+
+            if(b === 0){
+                time()
+                b += 1
+            }else{
+                t = setTimeout(time , 1000)
+            }
+
+            function time (){
+                clearTimeout(t)
+
+                tm = new Date()
+
+                const y = tm.getFullYear()
+                const mt = tm.getMonth()
+                const day = tm.getDate()
+                const h = tm.getHours()
+                const m = tm.getMinutes()
+                const s = tm.getSeconds()
+
+                document.querySelector('.timeShow').innerHTML = '当前时间：' + y + '年' + mt + '月' + day + '日' + h + '时' + m + '分' + s + '秒'
+
+                var t = setTimeout(time , 1000)
+            }
+        </script>
+    </header>
+
+    <section>
+        <div class="colum">
+            <div class="panle bar">
+                <h2>柱状图 行业行情</h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+            <div class="panle line">
+                <h2>折线图 粉丝 <a href="javascript:;">2023</a> <a href="javascript:;">2024</a></h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+            <div class="panle pie">
+                <h2>饼状图 年龄分类</h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+        </div>
+        
+        <div class="colum">
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>12144</li>
+                        <li>235335</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>前端需求人数</li>
+                        <li>供应人数</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="map">
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+
+        <div class="colum">
+            <div class="panle bar2">
+                <h2>柱状图 前端工具</h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+            <div class="panle line2">
+                <h2>折线图 前后端</h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+            <div class="panle pie2">
+                <h2>饼状图 地区</h2>
+                <div class="chart"></div>
+                <div class="panle-footer"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="./js/flexible.js"></script>
+    <script src="./js/node_modules/echarts/dist/echarts.js"></script>
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/china.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>
